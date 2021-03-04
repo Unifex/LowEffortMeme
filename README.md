@@ -1,6 +1,6 @@
 ### FINE
-## Have a readme
-# like it changes anything
+## Have a README
+# Like it changes anything.
 I still don't know why I did this...
 
 But hey! Have a screenshot too, why not!
