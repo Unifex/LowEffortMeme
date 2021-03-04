@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Low Effort Meme</string>
+    <string name="setup_intro">This is an low effort meme. No effort required</string>
+    <string name="setup_continue">What is wrong with you?</string>
+</resources>

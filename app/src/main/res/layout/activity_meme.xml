@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="nz.co.no.loweffortmeme.meme.MemeViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".meme.MemeActivity">
+        <ImageView
+            android:id="@+id/iv_no"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@{viewModel.liveNoRes}"
+            android:onClick="@{() -> viewModel.nextFormat()}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/gl_halfway"
+
+            />
+        <ImageView
+            android:id="@+id/iv_yes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@{viewModel.liveYesRes}"
+            app:layout_constraintTop_toBottomOf="@id/iv_no"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/gl_halfway"
+            />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_halfway"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintGuide_percent="0.5"
+            />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.liveTopText}"
+            app:layout_constraintStart_toStartOf="@id/gl_halfway"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/iv_no"
+            tools:text="Life is effort"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.liveBottomText}"
+            app:layout_constraintStart_toStartOf="@id/gl_halfway"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_yes"
+            app:layout_constraintBottom_toBottomOf="@id/iv_yes"
+            tools:text="I'll stop when I die"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
